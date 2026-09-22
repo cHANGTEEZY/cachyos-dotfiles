@@ -1,0 +1,98 @@
+/* General */
+* {
+    font-family: "JetBrainsMono Nerd Font", "Symbols Nerd Font Mono", monospace;
+    font-size: 11px;
+    min-height: 0;
+}
+
+window#waybar {
+    min-height: 10px;
+    background-color: rgba(20, 20, 20, 0);
+    color: #ffffff;
+}
+
+/* LEFT */
+.modules-left {
+    background-color: rgba(20, 20, 20, 0.5);
+    border-radius: 10px;
+    margin: 4px 0 2px 170px;
+}
+
+/* CENTER */
+.modules-center {
+    background-color: rgba(20, 20, 20, 0.5);
+    border-radius: 10px;
+    margin: 4px 0 2px;
+}
+
+/* RIGHT */
+.modules-right {
+    background-color: rgba(20, 20, 20, 0.5);
+    border-radius: 10px;
+    margin: 4px 6px 2px 0;
+}
+
+/* Module spacing */
+#clock,
+#pulseaudio,
+#mpris,
+#custom-power,
+#temperature {
+    padding: 0 10px;
+    margin: 0 2px;
+}
+
+/* Power */
+#custom-power {
+    color: #ffffff;
+    font-size: 15px;
+    margin-right: 10px;
+}
+
+/* MPRIS */
+#mpris {
+    min-width: 0;
+}
+
+/* Clock */
+#clock {
+    font-weight: bold;
+}
+
+/* Temperature */
+#temperature.critical {
+    color: #ff5555;
+}
+
+/* Tooltip */
+tooltip {
+    background-color: rgba(20, 20, 20, 0.4);
+    color: #ffffff;
+    font-weight: bold;
+    border: 1px solid rgba(255, 255, 255, 0);
+    border-radius: 25px;
+}
+
+tooltip label {
+    color: #ffffff;
+    font-size: 11px;
+    padding: 0;
+    margin: 0;
+}
+
+/* Interactive hover effect */
+#temperature,
+#clock,
+#pulseaudio,
+#mpris,
+#custom-power {
+    transition: font-size 0.15s ease;
+}
+
+#temperature:hover,
+#clock:hover,
+#pulseaudio:hover,
+#mpris:hover,
+#custom-power:hover {
+    font-size: 14px;
+}

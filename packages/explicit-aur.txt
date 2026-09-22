@@ -1,0 +1,15 @@
+breeze-plus
+bun-bin
+caelestia-cli
+caelestia-shell
+darkly-bin
+libcava
+otf-space-grotesk
+python-materialyoucolor
+qt6-m3shapes-git
+quickshell-git
+ttf-readex-pro
+ttf-readex-pro-variable
+ttf-rubik-vf
+ttf-twemoji
+whitesur-icon-theme

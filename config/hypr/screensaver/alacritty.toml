@@ -1,0 +1,25 @@
+[colors.primary]
+background = "0x000000"
+foreground = "0xffffff"
+
+[colors.cursor]
+cursor = "0x000000"
+
+[font]
+normal = { family = "JetBrainsMono Nerd Font", style = "Regular" }
+size = 11.2
+
+[window]
+decorations = "None"
+dynamic_padding = false
+opacity = 1.0
+padding = { x = 0, y = 0 }
+
+[scrolling]
+history = 0
+
+[cursor]
+style = { shape = "Block", blinking = "Off" }
+
+[mouse]
+hide_when_typing = true

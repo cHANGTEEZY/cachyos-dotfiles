@@ -1,0 +1,27 @@
+[global]
+    monitor = 0
+    follow = mouse
+    font = JetBrainsMono Nerd Font 10
+    frame_width = 0
+    gap_size = 8
+    offset = 8x8
+    origin = top-right
+    padding = 12
+    horizontal_padding = 12
+    corner_radius = 10
+    background = "#141414cc"
+    foreground = "#ffffff"
+    timeout = 5
+
+[urgency_low]
+    background = "#141414cc"
+    foreground = "#ffffff"
+
+[urgency_normal]
+    background = "#141414cc"
+    foreground = "#ffffff"
+
+[urgency_critical]
+    background = "#3a1515cc"
+    foreground = "#ffffff"
+    timeout = 0

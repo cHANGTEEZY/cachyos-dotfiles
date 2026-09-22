@@ -1,0 +1,51 @@
+{
+    "layer": "top",
+    "position": "top",
+    "exclusive": true, // "false" 
+    "spacing": 0,
+
+    "modules-left": ["temperature"],
+    "modules-center": ["clock"],
+    "modules-right": ["mpris", "pulseaudio", "custom/power"],
+
+    "temperature": {
+        "hwmon-path": "/sys/class/hwmon/hwmon5/temp1_input",
+        "critical-threshold": 80,
+        "format": " {temperatureC}°C",
+        "format-critical": " {temperatureC}°C",
+        "tooltip": true,
+        "tooltip-format": "CPU Temp: {temperatureC}°C",
+        "interval": 2,
+        "on-click": "~/.config/waybar/scripts/toggle-gammastep"
+    },
+
+    "clock": {
+        "format": "{:%H:%M}",
+        "tooltip-format": "<tt>{:%a %d %b %Y}</tt>"
+    },
+
+    "mpris": {
+        "format": "{title} - {artist}",
+        "format-paused": "{title} - {artist}",
+        "max-length": 50,
+        "tooltip": false,
+        "interval": 2
+    },
+
+    "pulseaudio": {
+        "format": "{icon}  {volume}%",
+        "format-muted": "Muted",
+        "format-icons": {
+            "default": ["", "", ""]
+        },
+        "tooltip": false,
+        "on-click": "pavucontrol",
+        "on-click-right": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
+    },
+
+    "custom/power": {
+        "format": "⏻",
+        "tooltip": false,
+        "on-click": "~/.config/hypr/scripts/wlogout.sh"
+    }
+}
