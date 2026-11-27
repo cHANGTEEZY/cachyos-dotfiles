@@ -44,20 +44,21 @@ PanelWindow {
     }
 
     implicitWidth: workspaceCount * buttonWidth + 8
-    implicitHeight: 18
+    implicitHeight: 24
     color: "transparent"
     exclusionMode: ExclusionMode.Ignore
-    aboveWindows: false
+    aboveWindows: true
     visible: !root.fullscreenActive
 
+    // Overlay sits above waybar. Fullscreen hides this window so games still cover it.
     WlrLayershell.namespace: "changteezy-workspaces"
-    WlrLayershell.layer: WlrLayer.Top
+    WlrLayershell.layer: WlrLayer.Overlay
     WlrLayershell.keyboardFocus: WlrKeyboardFocus.None
 
     Rectangle {
         anchors.fill: parent
-        color: "#80141414"
-        radius: 10
+        color: "#cc1a1b26"
+        radius: 0
 
         MouseArea {
             anchors.fill: parent
@@ -83,12 +84,12 @@ PanelWindow {
                 width: 20
                 height: 2
                 radius: 1
-                color: "#ffffff"
+                color: "#7aa2f7"
 
                 Behavior on x {
                     NumberAnimation {
-                        duration: 260
-                        easing.type: Easing.InOutCubic
+                        duration: 90
+                        easing.type: Easing.OutCubic
                     }
                 }
             }
@@ -111,18 +112,18 @@ PanelWindow {
                             anchors.verticalCenterOffset: -1
                             text: parent.workspaceId
                             color: parent.workspaceId === root.activeWorkspace
-                                ? "#ffffff"
+                                ? "#7dcfff"
                                 : clickArea.containsMouse
-                                    ? "#d0ffffff"
-                                    : "#8cffffff"
+                                    ? "#ffffff"
+                                    : "#c0caf5"
                             font.family: "JetBrainsMono Nerd Font"
-                            font.pixelSize: 11
+                            font.pixelSize: 14
                             font.weight: parent.workspaceId === root.activeWorkspace
                                 ? Font.DemiBold
                                 : Font.Normal
 
                             Behavior on color {
-                                ColorAnimation { duration: 180 }
+                                ColorAnimation { duration: 80 }
                             }
                         }
 

@@ -8,27 +8,27 @@
 window#waybar {
     min-height: 10px;
     background-color: rgba(20, 20, 20, 0);
-    color: #ffffff;
+    color: #c0caf5;
 }
 
 /* LEFT */
 .modules-left {
-    background-color: rgba(20, 20, 20, 0.5);
-    border-radius: 10px;
+    background-color: rgba(26, 27, 38, 0.86);
+    border-radius: 0;
     margin: 4px 0 2px 170px;
 }
 
 /* CENTER */
 .modules-center {
-    background-color: rgba(20, 20, 20, 0.5);
-    border-radius: 10px;
+    background-color: rgba(26, 27, 38, 0.86);
+    border-radius: 0;
     margin: 4px 0 2px;
 }
 
 /* RIGHT */
 .modules-right {
-    background-color: rgba(20, 20, 20, 0.5);
-    border-radius: 10px;
+    background-color: rgba(26, 27, 38, 0.86);
+    border-radius: 0;
     margin: 4px 6px 2px 0;
 }
 
@@ -66,11 +66,11 @@ window#waybar {
 
 /* Tooltip */
 tooltip {
-    background-color: rgba(20, 20, 20, 0.4);
-    color: #ffffff;
+    background-color: rgba(26, 27, 38, 0.94);
+    color: #c0caf5;
     font-weight: bold;
-    border: 1px solid rgba(255, 255, 255, 0);
-    border-radius: 25px;
+    border: 1px solid #7aa2f7;
+    border-radius: 0;
 }
 
 tooltip label {
