@@ -1,52 +1,56 @@
 /* General */
 * {
     font-family: "JetBrainsMono Nerd Font", "Symbols Nerd Font Mono", monospace;
-    font-size: 11px;
+    font-size: 14px;
     min-height: 0;
 }
 
 window#waybar {
-    min-height: 10px;
+    min-height: 24px;
     background-color: rgba(20, 20, 20, 0);
     color: #c0caf5;
 }
 
 /* LEFT */
 .modules-left {
-    background-color: rgba(26, 27, 38, 0.86);
+    background-color: rgba(26, 27, 38, 0.8);
     border-radius: 0;
+    min-height: 24px;
     margin: 4px 0 2px 170px;
 }
 
 /* CENTER */
 .modules-center {
-    background-color: rgba(26, 27, 38, 0.86);
+    background-color: rgba(26, 27, 38, 0.8);
     border-radius: 0;
+    min-height: 24px;
     margin: 4px 0 2px;
 }
 
 /* RIGHT */
 .modules-right {
-    background-color: rgba(26, 27, 38, 0.86);
+    background-color: rgba(26, 27, 38, 0.8);
     border-radius: 0;
+    min-height: 24px;
     margin: 4px 6px 2px 0;
 }
 
-/* Module spacing */
+/* One size for every module, matching the workspace buttons. */
 #clock,
 #pulseaudio,
 #mpris,
 #custom-power,
 #temperature {
     padding: 0 10px;
-    margin: 0 2px;
+    margin: 0;
+    min-height: 24px;
+    font-size: 14px;
 }
 
 /* Power */
 #custom-power {
-    color: #ffffff;
-    font-size: 15px;
-    margin-right: 10px;
+    color: #c0caf5;
+    padding-right: 12px;
 }
 
 /* MPRIS */
@@ -57,6 +61,7 @@ window#waybar {
 /* Clock */
 #clock {
     font-weight: bold;
+    color: #c0caf5;
 }
 
 /* Temperature */
@@ -75,24 +80,7 @@ tooltip {
 
 tooltip label {
     color: #ffffff;
-    font-size: 11px;
+    font-size: 14px;
     padding: 0;
     margin: 0;
-}
-
-/* Interactive hover effect */
-#temperature,
-#clock,
-#pulseaudio,
-#mpris,
-#custom-power {
-    transition: font-size 0.15s ease;
-}
-
-#temperature:hover,
-#clock:hover,
-#pulseaudio:hover,
-#mpris:hover,
-#custom-power:hover {
-    font-size: 14px;
 }

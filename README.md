@@ -36,7 +36,7 @@ Log out and start the Hyprland UWSM session.
 | Mod key | Super |
 | Terminal | Alacritty (JetBrainsMono Nerd Font, opacity 0.8) |
 | File manager | Dolphin |
-| Browser | Zen (`zen-browser-bin`) |
+| Browser | Brave |
 | Editor shortcut | GNOME Text Editor |
 | Calculator | GNOME Calculator |
 | Launcher | Rofi |
@@ -81,7 +81,7 @@ Super is the main modifier. Workspaces 1–9 are the number row. `0` is workspac
 | Super + Return | Alacritty |
 | Super + E | Dolphin |
 | Super + T | GNOME Text Editor |
-| Super + W | Zen (focus the existing window if it is already open) |
+| Super + W | Brave (go to the workspace where it is open) |
 | Super + C | Calculator |
 | Super + Space | Command menu (apps and commands) |
 | Super + Period | Rofi emoji |

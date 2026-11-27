@@ -7,7 +7,7 @@
 mainMod      = "SUPER"
 TERMINAL     = "alacritty"
 FILE_MANAGER = "dolphin"
-BROWSER      = "zen-browser"
+BROWSER      = "brave"
 EDITOR       = "gnome-text-editor --new-window"
 CALCULATOR   = "gnome-calculator"
 terminal     = TERMINAL
@@ -35,6 +35,8 @@ hl.on("hyprland.start", function()
     hl.exec_cmd("waybar")
     hl.exec_cmd("qs -c workspacebar")
     hl.exec_cmd("qs -c commandspace")
+    hl.exec_cmd("qs -c clockpanel")
+    hl.exec_cmd("qs -c indicators")
     hl.exec_cmd("dunst")
     hl.exec_cmd("awww-daemon")
     hl.exec_cmd("hypridle")

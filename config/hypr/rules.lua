@@ -22,6 +22,20 @@ hl.layer_rule({
     order = 50,
 })
 
+-- Calendar and world clock, opened from the center clock.
+hl.layer_rule({
+    name = "clockpanel-overlay",
+    match = { namespace = "^clockpanel$" },
+    order = 60,
+})
+
+-- Toggles beside the clock. Above the bar, under the command palette.
+hl.layer_rule({
+    name = "indicators-overlay",
+    match = { namespace = "^changteezy-indicators$" },
+    order = 25,
+})
+
 -- Omarchy keeps normal windows solid. Fullscreen stays opaque.
 hl.window_rule({
     name = "solid-windows",
