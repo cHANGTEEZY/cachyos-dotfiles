@@ -83,7 +83,7 @@ Super is the main modifier. Workspaces 1–9 are the number row. `0` is workspac
 | Super + T | GNOME Text Editor |
 | Super + W | Zen (focus the existing window if it is already open) |
 | Super + C | Calculator |
-| Super + Space | Rofi app launcher |
+| Super + Space | Command menu (apps and commands) |
 | Super + Period | Rofi emoji |
 | Super + V | Clipboard history (cliphist + Rofi) |
 | Super + X | PulseAudio volume control |
@@ -124,7 +124,7 @@ Media keys, volume, and brightness keys are bound too. Four-finger horizontal sw
 config/          linked to ~/.config
   hypr/          Hyprland Lua config, keybinds, rules, lock, idle, scripts
   waybar/        top bar
-  quickshell/    workspace bar and wallpaper picker
+  quickshell/    workspace bar, command menu, wallpaper picker
   rofi/ dunst/ wlogout/ alacritty/ kitty/ fuzzel/
   gtk-3.0/ gtk-4.0/ btop/ cava/ fish/ fontconfig/
 home/            .zshrc .zprofile .p10k.zsh .gtkrc-2.0 .gitconfig

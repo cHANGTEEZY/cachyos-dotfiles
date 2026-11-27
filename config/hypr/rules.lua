@@ -8,31 +8,37 @@ hl.layer_rule({
     ignore_alpha = 0.15,
 })
 
--- Keep the workspace switcher above waybar, but on the top layer so
--- exclusive fullscreen windows (games) cover it.
+-- Keep the workspace switcher above waybar. It hides itself in fullscreen.
 hl.layer_rule({
-    match = { namespace = "changteezy-workspaces" },
-    order = 10,
+    name = "workspace-switcher-above-bar",
+    match = { namespace = "^changteezy-workspaces$" },
+    order = 20,
 })
 
--- Give regular windows subtle compositor transparency. Fullscreen windows
--- remain opaque, and force_rgbx stays disabled to avoid broken overlays.
+-- Command palette sits above the bar and the workspace switcher.
+hl.layer_rule({
+    name = "commandspace-overlay",
+    match = { namespace = "^commandspace$" },
+    order = 50,
+})
+
+-- Omarchy keeps normal windows solid. Fullscreen stays opaque.
 hl.window_rule({
-    name = "subtle-transparency",
+    name = "solid-windows",
     match = { class = ".*" },
-    opacity = "0.96 override 0.92 override 1.0 override",
+    opacity = "1.0 override 1.0 override 1.0 override",
     opaque = true,
     no_blur = true,
     force_rgbx = false,
 })
 
--- Terminals keep only their own configured alpha (e.g. Alacritty at 0.8).
+-- Terminals use Omarchy's slight active/inactive transparency.
 hl.window_rule({
-    name = "glass-terminals",
+    name = "terminal-transparency",
     match = { class = "^(Alacritty|kitty|foot|org\\.wezfurlong\\.wezterm|com\\.mitchellh\\.ghostty)$" },
-    opacity = "1.0 override 1.0 override 1.0 override",
+    opacity = "0.985 override 0.96 override 1.0 override",
     opaque = false,
-    no_blur = false,
+    no_blur = true,
 })
 
 -- Terminal screensaver: cover the monitor edge-to-edge with no window chrome.

@@ -5,8 +5,32 @@ set -u
 runtime_dir="${XDG_RUNTIME_DIR:-/tmp}/changteezy-screensaver"
 art_file="$HOME/.config/hypr/screensaver/changteezy.txt"
 normalized_art="$runtime_dir/art.txt"
-tte="$HOME/.local/bin/tte"
 tte_pid=""
+
+# Omarchy's screensaver animates the wordmark with Terminal Text Effects.
+# The engine lives in a user venv; ttfx/tte on PATH are accepted too.
+resolve_tte() {
+    local candidate
+    for candidate in \
+        "$HOME/.local/share/changteezy/tte/bin/tte" \
+        "$HOME/.local/bin/ttfx" \
+        "$HOME/.local/bin/tte"
+    do
+        if [[ -x "$candidate" ]]; then
+            printf '%s\n' "$candidate"
+            return 0
+        fi
+    done
+    if command -v ttfx >/dev/null 2>&1; then
+        command -v ttfx
+        return 0
+    fi
+    if command -v tte >/dev/null 2>&1; then
+        command -v tte
+        return 0
+    fi
+    return 1
+}
 was_focused=false
 started_at=$(date +%s)
 
@@ -88,7 +112,21 @@ trap cleanup EXIT INT TERM HUP QUIT
 printf '\033]11;rgb:00/00/00\007\033[2J\033[H'
 hide_cursor
 wait_for_terminal
+
+if [[ ! -f "$art_file" ]]; then
+    printf 'screensaver: missing %s\n' "$art_file" >&2
+    sleep 4
+    exit 1
+fi
 normalize_art
+
+if ! tte=$(resolve_tte); then
+    printf '\033[2J\033[H'
+    cat "$normalized_art"
+    printf '\n\nscreensaver: install ttfx or terminaltexteffects to animate this\n'
+    read -rsn1 -t 8 || true
+    exit 0
+fi
 
 while true; do
     "$tte" -i "$normalized_art" \

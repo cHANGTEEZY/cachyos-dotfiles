@@ -1,8 +1,8 @@
 local mainMod = "SUPER"
 local launchPrefix = "uwsm app -- " -- if you are not using UWSM, make this empty (e.g. "")
 local home = os.getenv("HOME")
-local rofiMenu = "pgrep -x rofi >/dev/null && pkill -x rofi || rofi -show drun"
 local wlogoutCmd = home .. "/.config/hypr/scripts/wlogout.sh"
+local commandSpace = home .. "/.config/hypr/scripts/commandspace.sh"
 
 ---------------------------
 ---- WINDOW MANAGEMENT ----
@@ -80,7 +80,7 @@ hl.bind(mainMod .. " + W",          hl.dsp.exec_cmd(home .. "/.config/hypr/scrip
 hl.bind("CONTROL + SHIFT + Escape", hl.dsp.exec_cmd(launchPrefix .. TERMINAL .. " -e btop"))
 hl.bind(mainMod .. " + Z",          hl.dsp.exec_cmd(home .. "/.config/hypr/scripts/opacity.sh"))
 hl.bind(mainMod .. " + X",          hl.dsp.exec_cmd(launchPrefix .. "pavucontrol"))
-hl.bind(mainMod .. " + Space",      hl.dsp.exec_cmd(rofiMenu))
+hl.bind(mainMod .. " + Space",      hl.dsp.exec_cmd(commandSpace))
 hl.bind(mainMod .. " + period",     hl.dsp.exec_cmd("pgrep -x rofi >/dev/null && pkill -x rofi || rofi -show emoji"))
 hl.bind(mainMod .. " + L",          hl.dsp.exec_cmd(home .. "/.config/hypr/scripts/lock.sh"))
 hl.bind(mainMod .. " + SHIFT + L",  hl.dsp.exec_cmd(home .. "/.config/hypr/scripts/launch-screensaver.sh preview"))

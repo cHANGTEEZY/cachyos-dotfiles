@@ -7,7 +7,7 @@ cursor = "0x000000"
 
 [font]
 normal = { family = "JetBrainsMono Nerd Font", style = "Regular" }
-size = 11.2
+size = 16
 
 [window]
 decorations = "None"

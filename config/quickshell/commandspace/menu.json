@@ -1,0 +1,32 @@
+[
+  {"id": "apps", "icon": "󰀻", "label": "Apps", "aliases": ["app", "applications"]},
+  {"id": "learn", "icon": "󰧑", "label": "Learn"},
+  {"id": "learn.keybindings", "icon": "", "label": "Keybindings", "exec": "uwsm app -- gnome-text-editor --new-window \"$HOME/cachyos-dotfiles/README.md\""},
+  {"id": "learn.hyprland", "icon": "", "label": "Hyprland", "exec": "xdg-open https://wiki.hypr.land/"},
+  {"id": "learn.arch", "icon": "󰣇", "label": "Arch", "exec": "xdg-open https://wiki.archlinux.org/title/Main_page"},
+
+  {"id": "appearance", "icon": "󰏘", "label": "Appearance", "aliases": ["style"]},
+  {"id": "appearance.background", "icon": "", "label": "Background", "aliases": ["wallpaper", "background"], "exec": "\"$HOME/.config/hypr/scripts/hyprquickpaper.sh\""},
+  {"id": "appearance.bar", "icon": "󰍜", "label": "Toggle Bar", "exec": "if pgrep -x waybar >/dev/null; then pkill waybar; else nohup waybar >/dev/null 2>&1 & fi"},
+  {"id": "appearance.opacity", "icon": "󰂵", "label": "Window Opacity", "exec": "\"$HOME/.config/hypr/scripts/opacity.sh\""},
+
+  {"id": "trigger", "icon": "󱓞", "label": "Trigger"},
+  {"id": "trigger.screenshot.region", "icon": "󰹑", "label": "Screenshot Region", "aliases": ["capture", "screenshot"], "exec": "grim -g \"$(slurp)\" - | wl-copy"},
+  {"id": "trigger.screenshot.monitor", "icon": "󰍹", "label": "Screenshot Monitor", "exec": "grim -o \"$(hyprctl activeworkspace -j | jq -r .monitor)\" - | wl-copy"},
+  {"id": "trigger.color", "icon": "󰏘", "label": "Color Picker", "exec": "hyprpicker -a -n"},
+  {"id": "trigger.clipboard", "icon": "󰅍", "label": "Clipboard", "exec": "cliphist list | rofi -dmenu -p '' | cliphist decode | wl-copy"},
+  {"id": "trigger.emoji", "icon": "󰞅", "label": "Emoji", "exec": "rofi -show emoji"},
+  {"id": "trigger.notification", "icon": "󰂚", "label": "Last Notification", "exec": "dunstctl history-pop"},
+
+  {"id": "setup", "icon": "", "label": "Setup", "aliases": ["settings"]},
+  {"id": "setup.audio", "icon": "󰕾", "label": "Audio", "exec": "uwsm app -- pavucontrol"},
+  {"id": "setup.activity", "icon": "󰨇", "label": "Activity", "aliases": ["btop", "monitor"], "exec": "uwsm app -- alacritty -e btop"},
+
+  {"id": "system", "icon": "", "label": "System", "aliases": ["power", "power-menu"]},
+  {"id": "system.lock", "icon": "", "label": "Lock", "exec": "\"$HOME/.config/hypr/scripts/lock.sh\""},
+  {"id": "system.screensaver", "icon": "󱄄", "label": "Screensaver", "exec": "\"$HOME/.config/hypr/scripts/launch-screensaver.sh\" preview"},
+  {"id": "system.suspend", "icon": "󰒲", "label": "Suspend", "exec": "systemctl suspend"},
+  {"id": "system.logout", "icon": "󰍃", "label": "Logout", "exec": "uwsm stop"},
+  {"id": "system.reboot", "icon": "󰜉", "label": "Reboot", "exec": "systemctl reboot"},
+  {"id": "system.shutdown", "icon": "󰐥", "label": "Shutdown", "exec": "systemctl poweroff"}
+]

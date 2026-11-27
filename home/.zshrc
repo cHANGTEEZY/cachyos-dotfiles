@@ -34,5 +34,3 @@ alias avante='nvim -c "lua vim.defer_fn(function() require(\"avante.api\").zen_m
 
 # opencode
 export PATH="$HOME/.opencode/bin:$PATH"
-
-. "$HOME/.local/share/../bin/env"
