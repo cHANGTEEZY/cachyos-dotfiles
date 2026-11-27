@@ -7,7 +7,7 @@
 mainMod      = "SUPER"
 TERMINAL     = "alacritty"
 FILE_MANAGER = "dolphin"
-BROWSER      = "zen-browser"
+BROWSER      = "brave"
 EDITOR       = "gnome-text-editor --new-window"
 CALCULATOR   = "gnome-calculator"
 terminal     = TERMINAL
