@@ -18,12 +18,15 @@ raise SystemExit(1)
 }
 
 if brave_open; then
-    hyprctl dispatch focuswindow "class:^(brave-browser)$" >/dev/null
+    # Hyprland's Lua dispatcher treats an unquoted focuswindow regex as code.
+    hyprctl dispatch 'hl.dsp.focus({ window = "class:^(brave-browser)$" })' >/dev/null
     exit 0
 fi
 
 if command -v uwsm >/dev/null && uwsm check is-active >/dev/null 2>&1; then
-    exec uwsm app -- brave
+    uwsm app -- brave >/dev/null 2>&1 &
+    exit 0
 fi
 
-exec brave
+brave >/dev/null 2>&1 &
+exit 0
