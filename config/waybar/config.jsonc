@@ -21,7 +21,8 @@
 
     "clock": {
         "format": "{:%H:%M}",
-        "tooltip-format": "<tt>{:%a %d %b %Y}</tt>"
+        "tooltip-format": "<tt>{:%A, %d %B %Y}</tt>\nClick for the calendar and world clock",
+        "on-click": "~/.config/hypr/scripts/clockpanel.sh"
     },
 
     "mpris": {
