@@ -1,12 +1,7 @@
 #!/bin/bash
-# Open Brave on the workspace you are already using.
-# An existing Brave window is brought here instead of sending you to its old workspace.
+# Open Brave. If it is already open, go to that window's workspace.
 
 set -u
-
-current_workspace() {
-    hyprctl activeworkspace -j | python3 -c 'import json,sys; print(json.load(sys.stdin)["id"])'
-}
 
 brave_address() {
     hyprctl clients -j | python3 -c '
@@ -23,17 +18,13 @@ print(windows[0].get("address") or "")
 '
 }
 
-bring_here() {
-    local address="$1"
-    local workspace="$2"
-    hyprctl dispatch "hl.dsp.window.move({ window = \"address:${address}\", workspace = ${workspace} })" >/dev/null
+focus_address() {
+    hyprctl dispatch "hl.dsp.focus({ window = \"address:$1\" })" >/dev/null
 }
 
-workspace=$(current_workspace)
 address=$(brave_address)
-
 if [[ -n "$address" ]]; then
-    bring_here "$address" "$workspace"
+    focus_address "$address"
     exit 0
 fi
 
@@ -46,7 +37,7 @@ fi
 for _ in $(seq 1 40); do
     address=$(brave_address)
     if [[ -n "$address" ]]; then
-        bring_here "$address" "$workspace"
+        focus_address "$address"
         exit 0
     fi
     sleep 0.1
