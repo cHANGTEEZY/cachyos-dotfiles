@@ -81,7 +81,7 @@ Super is the main modifier. Workspaces 1–9 are the number row. `0` is workspac
 | Super + Return | Alacritty |
 | Super + E | Dolphin |
 | Super + T | GNOME Text Editor |
-| Super + W | Brave (focus the existing window if it is already open) |
+| Super + W | Brave (go to the workspace where it is open) |
 | Super + C | Calculator |
 | Super + Space | Command menu (apps and commands) |
 | Super + Period | Rofi emoji |
