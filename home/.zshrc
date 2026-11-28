@@ -34,3 +34,25 @@ alias avante='nvim -c "lua vim.defer_fn(function() require(\"avante.api\").zen_m
 
 # opencode
 export PATH="$HOME/.opencode/bin:$PATH"
+
+# Go toolchain. User tools from `go install` live in ~/go/bin.
+export GOPATH="$HOME/go"
+export PATH="$GOPATH/bin:$PATH"
+
+# Distro Node, npm, pnpm, tsc, eslint, and prettier are in /usr/bin.
+# Cursor's agent directory also ships a `node` binary; keep that directory
+# on PATH for the agent, but resolve `node` to the system one.
+if [[ "$PATH" == *cursor-agent/versions* && -x /usr/bin/node ]]; then
+  _path_front=()
+  _path_agent=()
+  for _path_entry in ${(s/:/)PATH}; do
+    case "$_path_entry" in
+      /usr/bin) ;;
+      *cursor-agent/versions*) _path_agent+=("$_path_entry") ;;
+      *) _path_front+=("$_path_entry") ;;
+    esac
+  done
+  path=($_path_front /usr/bin $_path_agent)
+  unset _path_front _path_agent _path_entry
+  typeset -U path
+fi
