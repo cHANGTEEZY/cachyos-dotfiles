@@ -7,3 +7,8 @@ export ANDROID_HOME="$HOME/Android/Sdk"
 export ANDROID_SDK_ROOT="$ANDROID_HOME"
 export JAVA_HOME="/usr/lib/jvm/java-17-openjdk"
 export PATH="$JAVA_HOME/bin:$ANDROID_HOME/emulator:$ANDROID_HOME/platform-tools:$ANDROID_HOME/cmdline-tools/latest/bin:$PATH"
+
+# Go (pacman). `go install` writes commands to ~/go/bin. Do not set GOROOT;
+# /usr/bin/go already knows it lives in /usr/lib/go.
+export GOPATH="$HOME/go"
+export PATH="$GOPATH/bin:$PATH"

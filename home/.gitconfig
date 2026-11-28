@@ -1,3 +1,9 @@
 [user]
 	email = JAGATGURUNG30@GMAIL.COM
 	name = changteezy
+[credential "https://github.com"]
+	helper = 
+	helper = !/home/changteezy/.local/bin/gh auth git-credential
+[credential "https://gist.github.com"]
+	helper = 
+	helper = !/home/changteezy/.local/bin/gh auth git-credential

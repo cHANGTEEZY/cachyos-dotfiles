@@ -17,6 +17,8 @@ gammastep
 gnome-calculator
 gnome-text-editor
 grim
+gwenview
+haruna
 hyprcursor
 hypridle
 hyprland
@@ -42,6 +44,7 @@ playerctl
 polkit-kde-agent
 python
 qt6ct
+qt6-imageformats
 rofi
 rofi-emoji
 slurp
